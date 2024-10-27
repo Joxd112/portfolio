@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: linear-gradient(135deg, #e09, #d0e);
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease;
+}
+
+#home {
+    background: linear-gradient(135deg, #e09, #d0e);
+    color: white;
+}
+
+#about, #projects, #contact {
+    background: #fff;
+}
+
+h1, h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.project-card {
+    background: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+section:target {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.project-card {
+    animation: slideIn 0.8s ease-in-out;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.neumorphism {
+    background: #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 9px 9px 16px #bebebe,
+                -9px -9px 16px #ffffff;
+    transition: all 0.3s ease;
+}
+
+.neumorphism:hover {
+    box-shadow: 5px 5px 10px #bebebe,
+                -5px -5px 10px #ffffff;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    h1, h2 {
+        font-size: 2rem;
+    }
+
+    .project-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
